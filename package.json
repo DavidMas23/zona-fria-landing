@@ -4,11 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node optimize-images.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize": "node optimize-images.mjs"
   },
   "dependencies": {
-    "astro": "^5.13.5"
+    "@splidejs/splide": "^4.1.4",
+    "astro": "^5.13.5",
+    "sharp": "^0.34.3"
   }
 }

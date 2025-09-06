@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://zonafria.vercel.app/sitemap.xml
+
+# Optimización para crawlers
+Crawl-delay: 1

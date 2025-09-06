@@ -1,0 +1,316 @@
+---
+const ubicaciones = [
+  {
+    name: "Centro Comercial Plaza Norte",
+    direccion: "Av. Principal 123, Local 45",
+    horario: "Lunes a Domingo: 10:00 AM - 10:00 PM",
+    telefono: "+57 300 123 4567",
+    maps: "https://maps.google.com",
+    color: "neon-green"
+  },
+  {
+    name: "Centro Histórico",
+    direccion: "Calle 5 #12-34, Centro",
+    horario: "Lunes a Sábado: 9:00 AM - 9:00 PM",
+    telefono: "+57 300 123 4568", 
+    maps: "https://maps.google.com",
+    color: "neon-pink"
+  },
+  {
+    name: "Zona Rosa",
+    direccion: "Carrera 15 #85-20",
+    horario: "Martes a Domingo: 11:00 AM - 11:00 PM",
+    telefono: "+57 300 123 4569",
+    maps: "https://maps.google.com",
+    color: "neon-blue"
+  }
+];
+---
+
+<section id="ubicaciones" class="ubicaciones">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        Nuestras <span class="text-neon-blue">Ubicaciones</span>
+      </h2>
+      <p class="section-subtitle">
+        Encuentra tu Zona Fría más cercana y disfruta de nuestros productos frescos
+      </p>
+    </div>
+    
+    <div class="ubicaciones-grid">
+      {ubicaciones.map((ubicacion) => (
+        <div class={`ubicacion-card ${ubicacion.color}`}>
+          <div class="ubicacion-header">
+            <h3 class="ubicacion-name">{ubicacion.name}</h3>
+            <div class="ubicacion-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Abierto</span>
+            </div>
+          </div>
+          
+          <div class="ubicacion-info">
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="info-icon">
+                <path d="M21 10C21 17 12 23 12 23S3 17 3 10A9 9 0 0 1 12 1A9 9 0 0 1 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span class="info-text">{ubicacion.direccion}</span>
+            </div>
+            
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="info-icon">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="info-text">{ubicacion.horario}</span>
+            </div>
+            
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="info-icon">
+                <path d="M22 16.92V19A2 2 0 0 1 20.18 21C18.91 21 17.67 20.78 16.47 20.35A16.13 16.13 0 0 1 9.35 16.47A16.13 16.13 0 0 1 3.65 9.35A16.13 16.13 0 0 1 0.35 3.53A2 2 0 0 1 2.08 2H5.15A2 2 0 0 1 7.12 3.82C7.49 5.34 8.16 6.78 9.12 8.07L7.82 9.37A12.84 12.84 0 0 0 14.63 16.18L15.93 14.88C17.22 15.84 18.66 16.51 20.18 16.88A2 2 0 0 1 22 18.85V21.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="info-text">{ubicacion.telefono}</span>
+            </div>
+          </div>
+          
+          <div class="ubicacion-actions">
+            <a href={ubicacion.maps} target="_blank" rel="noopener noreferrer" class="btn-map">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M21 10C21 17 12 23 12 23S3 17 3 10A9 9 0 0 1 12 1A9 9 0 0 1 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Ver en Mapa
+            </a>
+            <a href={`tel:${ubicacion.telefono}`} class="btn-call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92V19A2 2 0 0 1 20.18 21C18.91 21 17.67 20.78 16.47 20.35A16.13 16.13 0 0 1 9.35 16.47A16.13 16.13 0 0 1 3.65 9.35A16.13 16.13 0 0 1 0.35 3.53A2 2 0 0 1 2.08 2H5.15A2 2 0 0 1 7.12 3.82C7.49 5.34 8.16 6.78 9.12 8.07L7.82 9.37A12.84 12.84 0 0 0 14.63 16.18L15.93 14.88C17.22 15.84 18.66 16.51 20.18 16.88A2 2 0 0 1 22 18.85V21.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Llamar
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ubicaciones {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark);
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .ubicaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .ubicacion-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ubicacion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+  
+  .ubicacion-card.neon-green::before {
+    background: linear-gradient(90deg, var(--neon-green), #32e010);
+  }
+  
+  .ubicacion-card.neon-pink::before {
+    background: linear-gradient(90deg, var(--neon-pink), #e6064d);
+  }
+  
+  .ubicacion-card.neon-blue::before {
+    background: linear-gradient(90deg, var(--neon-blue), #00d4e6);
+  }
+  
+  .ubicacion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .ubicacion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .ubicacion-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0;
+  }
+  
+  .ubicacion-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  .status-text {
+    font-size: 0.9rem;
+    color: var(--neon-green);
+    font-weight: 500;
+  }
+  
+  .ubicacion-info {
+    margin-bottom: 25px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .info-icon {
+    color: #666;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .info-text {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  
+  .ubicacion-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-map, .btn-call {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn-map {
+    background: var(--neon-blue);
+    color: white;
+  }
+  
+  .btn-map:hover {
+    background: #00d4e6;
+    transform: translateY(-2px);
+  }
+  
+  .btn-call {
+    background: var(--neon-green);
+    color: white;
+  }
+  
+  .btn-call:hover {
+    background: #32e010;
+    transform: translateY(-2px);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(57, 255, 20, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .ubicaciones {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      padding: 0 20px;
+    }
+    
+    .ubicaciones-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .ubicacion-card {
+      padding: 25px 20px;
+    }
+    
+    .ubicacion-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .ubicacion-name {
+      font-size: 1.2rem;
+    }
+    
+    .ubicacion-actions {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,245 @@
+---
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <h3 class="brand-name">
+            <span class="text-neon-green">Zona</span>
+            <span class="text-neon-pink">Fría</span>
+          </h3>
+          <p class="footer-tagline">Donde cada bocado es una experiencia única</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-title">Productos</h4>
+        <ul class="footer-links">
+          <li><a href="#productos">Helados Naturales</a></li>
+          <li><a href="#productos">Milkshakes</a></li>
+          <li><a href="#productos">Frutas Frescas</a></li>
+          <li><a href="#productos">Panes para Lonch</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-title">Ubicaciones</h4>
+        <ul class="footer-links">
+          <li><a href="#ubicaciones">Centro Comercial Plaza Norte</a></li>
+          <li><a href="#ubicaciones">Centro Histórico</a></li>
+          <li><a href="#ubicaciones">Zona Rosa</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-title">Síguenos</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 2H15A5 5 0 0 0 10 7V10H7V14H10V22H14V14H17L18 10H14V7A1 1 0 0 1 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="2"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M21 11.5A8.38 8.38 0 0 1 12.62 20A8.38 8.38 0 0 1 3 11.5A8.38 8.38 0 0 1 12.62 3A8.38 8.38 0 0 1 21 11.5Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M8.5 14.5C9.5 15.5 11.5 16.5 13.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="contact-info">
+          <p class="contact-item">
+            <span class="contact-label">WhatsApp:</span>
+            <a href="tel:+573001234567" class="contact-link">+57 300 123 4567</a>
+          </p>
+          <p class="contact-item">
+            <span class="contact-label">Email:</span>
+            <a href="mailto:info@zonafria.com" class="contact-link">info@zonafria.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-decoration"></div>
+      <p class="footer-copyright">
+        © 2025 Zona Fría. Todos los derechos reservados. | Hecho con ❤️ para los amantes de los sabores naturales.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: white;
+    padding: 60px 0 30px;
+    position: relative;
+  }
+  
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-green), var(--neon-pink), var(--neon-blue));
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-logo .brand-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .footer-tagline {
+    color: #ccc;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--neon-blue);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .footer-links a:hover {
+    color: var(--neon-green);
+    padding-left: 5px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background: var(--neon-green);
+    transform: translateY(-3px);
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+  }
+  
+  .contact-item {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .contact-label {
+    color: #999;
+    margin-right: 5px;
+  }
+  
+  .contact-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    color: var(--neon-green);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-decoration {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-green), var(--neon-pink), var(--neon-blue));
+    margin: 0 auto 20px;
+    border-radius: 1px;
+  }
+  
+  .footer-copyright {
+    color: #999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+    
+    .footer-logo .brand-name {
+      font-size: 1.8rem;
+    }
+    
+    .social-links {
+      justify-content: center;
+    }
+    
+    .footer-copyright {
+      font-size: 0.8rem;
+      padding: 0 20px;
+    }
+  }
+</style>

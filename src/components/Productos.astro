@@ -1,0 +1,215 @@
+---
+const productos = [
+  {
+    name: "Helados Naturales",
+    description: "Elaborados con frutas frescas y ingredientes 100% naturales",
+    icon: "🍦",
+    color: "neon-green"
+  },
+  {
+    name: "Milkshakes",
+    description: "Cremosos batidos con sabores únicos y texturas irresistibles",
+    icon: "🥤",
+    color: "neon-pink"
+  },
+  {
+    name: "Frutas Frescas",
+    description: "Selección diaria de frutas de temporada, perfectas para acompañar",
+    icon: "🍓",
+    color: "neon-blue"
+  },
+  {
+    name: "Panes para Lonch",
+    description: "Panes artesanales horneados diariamente, ideales para tu lonch",
+    icon: "🥖",
+    color: "neon-green"
+  }
+];
+---
+
+<section id="productos" class="productos">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        Nuestros <span class="text-neon-pink">Productos</span>
+      </h2>
+      <p class="section-subtitle">
+        Calidad premium en cada bocado, frescura garantizada en cada producto
+      </p>
+    </div>
+    
+    <div class="productos-grid">
+      {productos.map((producto) => (
+        <div class={`producto-card ${producto.color}`}>
+          <div class="producto-icon">
+            {producto.icon}
+          </div>
+          <h3 class="producto-name">{producto.name}</h3>
+          <p class="producto-description">{producto.description}</p>
+          <div class="producto-decoration"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .productos {
+    padding: 80px 0;
+    background: var(--gray);
+    position: relative;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark);
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .producto-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .producto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .producto-card.neon-green::before {
+    background: linear-gradient(90deg, var(--neon-green), #32e010);
+  }
+  
+  .producto-card.neon-pink::before {
+    background: linear-gradient(90deg, var(--neon-pink), #e6064d);
+  }
+  
+  .producto-card.neon-blue::before {
+    background: linear-gradient(90deg, var(--neon-blue), #00d4e6);
+  }
+  
+  .producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .producto-card:hover::before {
+    height: 100%;
+    opacity: 0.05;
+  }
+  
+  .producto-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .producto-card:hover .producto-icon {
+    transform: scale(1.1);
+  }
+  
+  .producto-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--dark);
+  }
+  
+  .producto-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .producto-decoration {
+    width: 50px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .producto-card.neon-green .producto-decoration {
+    background: var(--neon-green);
+  }
+  
+  .producto-card.neon-pink .producto-decoration {
+    background: var(--neon-pink);
+  }
+  
+  .producto-card.neon-blue .producto-decoration {
+    background: var(--neon-blue);
+  }
+  
+  .producto-card:hover .producto-decoration {
+    width: 80px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .productos {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      padding: 0 20px;
+    }
+    
+    .productos-grid {
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    
+    .producto-card {
+      padding: 30px 20px;
+    }
+    
+    .producto-icon {
+      font-size: 3rem;
+    }
+    
+    .producto-name {
+      font-size: 1.3rem;
+    }
+  }
+</style>

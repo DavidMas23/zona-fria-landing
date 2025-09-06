@@ -1,16 +1,85 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
+import Productos from '../components/Productos.astro';
+import Ubicaciones from '../components/Ubicaciones.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout 
+  title="Zona Fría - Heladería Natural | Helados, Milkshakes y Más"
+  description="Zona Fría ofrece los mejores helados naturales, milkshakes cremosos, frutas frescas y panes artesanales. Encuentra nuestras ubicaciones y disfruta de sabores únicos elaborados con ingredientes premium."
+>
+  <main>
+    <Hero />
+    
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            Nuestra <span class="text-neon-green">Galería</span>
+          </h2>
+          <p class="section-subtitle">
+            Descubre la frescura y calidad de nuestros productos en cada imagen
+          </p>
+        </div>
+        <ImageCarousel />
+      </div>
+    </section>
+    
+    <Productos />
+    <Ubicaciones />
+  </main>
+  <Footer />
+</Layout>
+
+<!-- Splide CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+<style>
+  main {
+    min-height: 100vh;
+  }
+  
+  .gallery-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dark);
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .gallery-section {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      padding: 0 20px;
+    }
+  }
+</style>

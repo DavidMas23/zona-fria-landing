@@ -1,0 +1,109 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const { 
+  title = "Zona Fría - Heladería Natural",
+  description = "Zona Fría ofrece los mejores helados naturales, milkshakes, frutas frescas y panes para lonch. Encuentra nuestras ubicaciones y disfruta de sabores únicos.",
+  image = "/og-image.jpg",
+  url = "https://zonafria.vercel.app"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Meta Tags Básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="keywords" content="heladería, helados naturales, milkshakes, fruta fresca, panes, zona fría, postres, ubicaciones" />
+  <meta name="author" content="Zona Fría" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={url} />
+  <meta property="og:site_name" content="Zona Fría" />
+  <meta property="og:locale" content="es_ES" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Title -->
+  <title>{title}</title>
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Critical CSS -->
+  <style>
+    :root {
+      --neon-green: #39ff14;
+      --neon-pink: #ff073a;
+      --neon-blue: #00f5ff;
+      --white: #ffffff;
+      --dark: #1a1a1a;
+      --gray: #f8f9fa;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Utilidades */
+    .text-center { text-align: center; }
+    .text-neon-green { color: var(--neon-green); }
+    .text-neon-pink { color: var(--neon-pink); }
+    .text-neon-blue { color: var(--neon-blue); }
+    .bg-neon-green { background-color: var(--neon-green); }
+    .bg-neon-pink { background-color: var(--neon-pink); }
+    .bg-neon-blue { background-color: var(--neon-blue); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
+</html>
